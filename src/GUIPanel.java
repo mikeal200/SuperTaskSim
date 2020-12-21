@@ -8,7 +8,8 @@ public class GUIPanel extends JPanel implements ActionListener {
     static final int SCREEN_HEIGHT = 600;
     boolean running = false;
     Color startingColor;
-    int delay = 10000;
+    int delay = 5000;
+    int initDelay = 10000;
     Timer timer;
     Random random;
     
@@ -29,6 +30,7 @@ public class GUIPanel extends JPanel implements ActionListener {
     public void startSim() {
         running = true;
         timer = new Timer(delay, this);
+        timer.setInitialDelay(initDelay);
         timer.start();
     }
 
