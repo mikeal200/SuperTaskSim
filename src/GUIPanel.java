@@ -8,20 +8,20 @@ public class GUIPanel extends JPanel implements ActionListener {
     static final int SCREEN_HEIGHT = 600;
     boolean running = false;
     Color startingColor;
-    int delay = 120000;
+    static final int delay = 60;
     Timer timer;
     Random random;
     
     GUIPanel() {
-        int color = random.nextInt(2);
+        /*int color = random.nextInt(2);
         if(color == 0) {
             startingColor = Color.red; 
         }
         else {
             startingColor = Color.green;
-        }
+        }*/
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(startingColor);
+        this.setBackground(Color.red);
         this.setFocusable(true);
         startSim();
     }
@@ -39,15 +39,15 @@ public class GUIPanel extends JPanel implements ActionListener {
     }
 
     public void draw(Graphics g) {
-        if(running) {
+        //if(running) {
             if(this.getBackground() == Color.green) {
                 this.setBackground(Color.red);
             }
             else {
                 this.setBackground(Color.green);
             }
-            delay = delay / 2;
-        }
+            //delay = delay / 2;
+        //}
     }
 
     @Override
